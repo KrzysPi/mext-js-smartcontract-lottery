@@ -147,7 +147,7 @@ export default function LotteryEntrance() {
                 </div>
             ) : (
                 <div className=" grid place-content-center font-bold text-red-600">
-                    Please connect to a supported chain{" "}
+                    Please connect to a Rinkeby Testnet{" "}
                 </div>
             )}
         </div>
