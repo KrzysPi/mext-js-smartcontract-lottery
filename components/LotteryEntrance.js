@@ -109,26 +109,31 @@ export default function LotteryEntrance() {
     }
 
     return (
-        <div className="">
-            <h1 className="py-7 px-4 font-bold text-6xl grid place-content-center">Lottery</h1>
+        <div className="bg-[#e2e8f0] p-auto">
+            <h1 className="pb-5 grid place-content-center font-bold text-6xl bg-[#cbd5e1] text-[#1e293b]">
+                Lottery
+            </h1>
             {raffleAddress ? (
-                <div className=" grid place-content-center">
-                    <div className="flex font-bold">
-                        Entrance Fee:{" "}
-                        <div className="text-blue-600 px-1">
-                            {ethers.utils.formatUnits(entranceFee, "ether")} ETH
+                <div className="pb-5 grid place-items-center">
+                    <div className=" pb-7 pt-5 ">
+                        <div className="flex font-bold">
+                            The recent winner was:
+                            <div className="text-blue-600 px-1">{recentWinner}</div>
+                        </div>
+                        <div className="flex font-bold">
+                            The current number of players is:
+                            <div className="text-blue-600 px-1"> {numberOfPlayers}</div>
+                        </div>
+
+                        <div className="flex font-bold pb-4">
+                            Entrance Fee:
+                            <div className="text-blue-600 px-1">
+                                {ethers.utils.formatUnits(entranceFee, "ether")} ETH
+                            </div>
                         </div>
                     </div>
-                    <div className="flex font-bold">
-                        The current number of players is:
-                        <div className="text-blue-600 px-1"> {numberOfPlayers}</div>
-                    </div>
-                    <div className="flex font-bold pb-4">
-                        The recent winner was:
-                        <div className="text-blue-600 px-1">{recentWinner}</div>
-                    </div>
                     <button
-                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                        className=" bg-slate-700 hover:bg-slate-800 text-white font-bold py-1 px-4 rounded"
                         onClick={async () =>
                             await enterRaffle({
                                 // onComplete:
