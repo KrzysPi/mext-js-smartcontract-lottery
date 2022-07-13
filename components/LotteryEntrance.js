@@ -109,16 +109,23 @@ export default function LotteryEntrance() {
     }
 
     return (
-        <div className="bg-[#e2e8f0] p-auto">
+        <div>
             <h1 className="pb-5 grid place-content-center font-bold text-6xl bg-[#cbd5e1] text-[#1e293b]">
                 Lottery
             </h1>
             {raffleAddress ? (
                 <div className="pb-5 grid place-items-center">
                     <div className=" pb-7 pt-5 ">
-                        <div className="flex font-bold">
+                        <div className="flex flex-wrap font-bold">
                             The recent winner was:
-                            <div className="text-blue-600 px-1">{recentWinner}</div>
+                            <a
+                                className="text-blue-600 px-1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={"https://rinkeby.etherscan.io/address/" + recentWinner}
+                            >
+                                {`${recentWinner.slice(0, 4)}...${recentWinner.slice(-4)}`}
+                            </a>
                         </div>
                         <div className="flex font-bold">
                             The current number of players is:
